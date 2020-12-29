@@ -174,13 +174,22 @@
 </ul>
 <a class="header" href="20201228.html#visual-studio-code-のセットアップ" id="visual-studio-code-のセットアップ"><h3>Visual Studio Code のセットアップ</h3></a>
 <ul>
-<li>とりあえず、プラグインのインストールのみ。
+<li>
+<p>とりあえず、プラグインのインストールのみ。</p>
 <ul>
 <li>vim</li>
 <li>Rust</li>
+<li>japanese</li>
 </ul>
 </li>
+<li>
+<p>settings</p>
+</li>
 </ul>
+<pre><code>workbench.editor.enablePreview: false
+editor.minimap.enabled: false
+window.openFoldersInNewWindow: on
+</code></pre>
 <a class="header" href="20201228.html#aターミナルのセットアップ" id="aターミナルのセットアップ"><h3>ターミナルのセットアップ</h3></a>
 <ul>
 <li>いい機会なので、今までの環境を全て捨てて、新しく環境を構築してみる。</li>
@@ -196,10 +205,27 @@ if [ -d /opt/homebrew/bin ]; then
   export PATH=&quot;/opt/homebrew/bin:$PATH&quot;
 fi' &gt;&gt; ~/.zshrc
 </code></pre>
+<a class="header" href="20201228.html#aその他のインストール" id="aその他のインストール"><h4>その他のインストール</h4></a>
+<pre><code>brew install tree
+brew install tmux
+</code></pre>
 <a class="header" href="20201228.html#shell" id="shell"><h4>Shell</h4></a>
 <ul>
-<li>Bash から Zsh に移行。</li>
+<li>
+<p>Bash から Zsh に移行。</p>
+</li>
+<li>
+<p>iTerm Shell Integration</p>
+<ul>
+<li>iTerm2 &gt; install Shell Integration</li>
 </ul>
+</li>
+<li>
+<p>Oh My ZSH</p>
+</li>
+</ul>
+<pre><code>sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+</code></pre>
 <a class="header" href="20201228.html#ssh" id="ssh"><h4>ssh</h4></a>
 <pre><code>ssh-keygen -t ed25519 -P &quot;パスフレーズ&quot; -f ~/.ssh/id_ed25519 -C &quot;コメント&quot;
 </code></pre>
@@ -244,11 +270,15 @@ gh gist create [ファイル名]
   or
 echo &quot;xxx&quot; | gh gist create
 </code></pre>
-<a class="header" href="20201228.html#zsh" id="zsh"><h4>Zsh</h4></a>
-<pre><code></code></pre>
-<a class="header" href="20201228.html#tmux" id="tmux"><h4>tmux</h4></a>
-<a class="header" href="20201228.html#aその他" id="aその他"><h4>その他</h4></a>
-<pre><code>brew install tree
+<a class="header" href="20201228.html#dotfiles" id="dotfiles"><h4>dotfiles</h4></a>
+<pre><code>gh clone [organization]/dotfiles
+cd dotfiles/
+./setup.sh
+</code></pre>
+<a class="header" href="20201228.html#scripts" id="scripts"><h4>scripts</h4></a>
+<pre><code>gh clone [organization]/scripts
+cd scripts/
+./setup.sh
 </code></pre>
 <a class="header" href="20201228.html#a買い物" id="a買い物"><h2>買い物</h2></a>
 <a class="header" href="20201228.html#aゲーム" id="aゲーム"><h3>ゲーム</h3></a>
