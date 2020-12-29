@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>2020-12-29 - </title>
+        <title>top - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="top.html"><strong aria-hidden="true">1.</strong> top</a></li><li><a href="20201228.html"><strong aria-hidden="true">2.</strong> 2020-12-28</a></li><li><a href="20201229.html" class="active"><strong aria-hidden="true">3.</strong> 2020-12-29</a></li></ol>
+            <ol class="chapter"><li><a href="top.html" class="active"><strong aria-hidden="true">1.</strong> top</a></li><li><a href="20201228.html"><strong aria-hidden="true">2.</strong> 2020-12-28</a></li><li><a href="20201229.html"><strong aria-hidden="true">3.</strong> 2020-12-29</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -118,138 +118,18 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="20201229.html#a2020-12-29-備忘録" id="a2020-12-29-備忘録"><h1>2020-12-29 備忘録</h1></a>
-<a class="header" href="20201229.html#github-の設定変更" id="github-の設定変更"><h2>Github の設定変更</h2></a>
-<a class="header" href="20201229.html#personal-access-token-の作成" id="personal-access-token-の作成"><h3>Personal Access Token の作成</h3></a>
-<ul>
-<li>以下をチェック
-<ul>
-<li>repo</li>
-<li>workflow</li>
-<li>write:packages</li>
-<li>delete:packages</li>
-<li>read:org</li>
-<li>gist</li>
-</ul>
-</li>
-</ul>
-<pre><code>echo &quot;[github personal access tokens]&quot; &gt; github_personal_access_tokens.txt
-</code></pre>
-<a class="header" href="20201229.html#rust-のインストール" id="rust-のインストール"><h2>Rust のインストール</h2></a>
-<pre><code>brew install rust
-
-echo '
-# rust
-if [ -d ~/.cargo/bin ]; then
-  export PATH=&quot;~/.cargo/bin:$PATH&quot;
-fi' &gt;&gt; ~/.zshrc
-</code></pre>
-<a class="header" href="20201229.html#aws-の設定変更" id="aws-の設定変更"><h2>AWS の設定変更</h2></a>
-<a class="header" href="20201229.html#github-pages-のセットアップ" id="github-pages-のセットアップ"><h2>Github Pages のセットアップ</h2></a>
-<ul>
-<li>mdbook のインストール</li>
-</ul>
-<pre><code>cargo install mdbook
-</code></pre>
-<ul>
-<li>GitHubPages用のリポジトリの作成</li>
-<li>mdBook用のリポジトリの作成</li>
-<li>デプロイ用SSHキーの作成</li>
-</ul>
-<pre><code>ssh-keygen -t ed25519 -P &quot;&quot; -f ~/.ssh/github_pages -C &quot;GitHub Pages&quot;
-</code></pre>
-<ul>
-<li>
-<p>GitHubPages用のリポジトリに公開鍵を登録</p>
-<ul>
-<li>Settings &gt; Deploy keys</li>
-<li>Allow write access にチェック</li>
-</ul>
-</li>
-<li>
-<p>mdBook用のリポジトリに秘密鍵を登録</p>
-<ul>
-<li>Settings &gt; Secrets</li>
-</ul>
-</li>
-<li>
-<p>mdBook初期化</p>
-</li>
-</ul>
-<pre><code>mdbook init
-</code></pre>
-<ul>
-<li>SUMMARY.md の修正</li>
-<li>src 内に markdown ファイルを配置</li>
-<li>ビルド</li>
-</ul>
-<pre><code>mdbook build
-</code></pre>
-<ul>
-<li>プレビュー</li>
-</ul>
-<pre><code>mdbook serve
-open http://localhost:3000
-</code></pre>
-<ul>
-<li>.github の作成</li>
-</ul>
-<pre><code>mkdir -p .github/actions/build
-mkdir -p .github/workflows
-
-vim .github/actions/build/Dockerfile
-vim .github/workflows/main.yml
-</code></pre>
-<ul>
-<li>Dockerfile の作成</li>
-</ul>
-<pre><code># .github/actions/build/Dockerfile
-FROM rust:latest
-
-RUN cargo install mdbook --no-default-features --features output --vers &quot;^0.4.4&quot;
-
-CMD [&quot;mdbook&quot;, &quot;build&quot;]
-</code></pre>
-<ul>
-<li>GitHub Actions のセットアップ</li>
-</ul>
-<pre><code># .github/workflows/main.yml
-name: GitHub Pages Deploy
-on:
-  push:
-    branches:
-    - master
-    paths:
-    - &quot;src/**&quot;
-    - &quot;book.toml&quot;
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      uses: ./.github/actions/build
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        deploy_key: ${{ secrets.DEPLOY_KEY }}
-        external_repository: [organization]/[repository]
-        PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./book
-
-</code></pre>
+                        <a class="header" href="top.html#top" id="top"><h1>top</h1></a>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="20201228.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        
 
+                        
+                            <a rel="next" href="20201228.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -259,11 +139,11 @@ jobs:
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="20201228.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                
 
+                
+                    <a href="20201228.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
